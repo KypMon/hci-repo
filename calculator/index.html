@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link href="library/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>JavaScript Calculator</h1>
+        <button class="btn btn-primary btn-lg" id="switch">Switch</button>
+    </div>
+
+    <div id="infix">
+        <div class="container infix" id="calculator">
+            <h3>Infix calculator</h3>
+            <!--  display div -->
+            <div class="row col-md-12 display" id="display">
+            </div>
+            <!-- numbers and operators -->
+            <div class="row" id="numbers-row">
+                <div class="col-md-12">
+                    <button class="num-button" id="button" onclick="setValue(7)">7</button>
+                    <button class="num-button" onclick="setValue(8)">8</button>
+                    <button class="num-button" onclick="setValue(9)">9</button>
+                    <button class="opp" onclick="oppClick(4)">/</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue(4);">4</button>
+                    <button class="num-button" onclick="setValue(5)">5</button>
+                    <button class="num-button" onclick="setValue(6)">6</button>
+                    <button class="opp" onclick="oppClick(3)">x</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue(1);">1</button>
+                    <button class="num-button" onclick="setValue(2)">2</button>
+                    <button class="num-button" onclick="setValue(3)">3</button>
+                    <button class="opp" id="minus" onclick="oppClick(2)">-</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue(0)">0</button>
+                    <button class="opp" id="decimal" onclick="setDecimal('.')">.</button>
+                    <button class="num-button" onclick="equalClick()">=</button>
+                    <button class="opp" onclick="oppClick(1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    End of infix-->
+
+    <!--    Start of RPN-->
+    <div id="rpn">
+        <div class="container rpn" id="calculator">
+            <h3>RPN calculator</h3>
+            <div class="row col-md-12 display" id="display2">
+            </div>
+            <div class="row" id="numbers-row">
+                <div class="col-md-12">
+                    <button class="num-button" id="button" onclick="setValue2(7)">7</button>
+                    <button class="num-button" onclick="setValue2(8)">8</button>
+                    <button class="num-button" onclick="setValue2(9)">9</button>
+                    <button class="opp" onclick="oppClick2(4)">/</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue2(4);">4</button>
+                    <button class="num-button" onclick="setValue2(5)">5</button>
+                    <button class="num-button" onclick="setValue2(6)">6</button>
+                    <button class="opp" onclick="oppClick2(3)">x</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue2(1);">1</button>
+                    <button class="num-button" onclick="setValue2(2)">2</button>
+                    <button class="num-button" onclick="setValue2(3)">3</button>
+                    <button class="opp" id="minus" onclick="oppClick2(2)">-</button>
+                </div>
+                <div class="col-md-12">
+                    <button class="num-button" onclick="setValue2(0)">0</button>
+                    <button class="opp" id="decimal" onclick="setDecimal2('.')">.</button>
+                    <button class="num-button" onclick="enterClick()">Enter</button>
+                    <button class="opp" onclick="oppClick2(1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of RPN-->
+
+
+
+    <script src="library/jquery.js"></script>
+    <!-- main.js -->
+    <script src="script/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript SVG Paint</title>
+    <meta charset="utf-8">
+    <!-- http://stackoverflow.com/questions/10614481/disable-double-tap-zoom-option-in-browser-on-touch-devices -->
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="paint.css" rel="stylesheet" type="text/css">
+    <!-- Inlucde jquery and jquery mobile for touchscreen support. -->
+    <!-- We choose to copy them into our project, because we want it to work offline -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Includes our javascript file with all the painting functions -->
+    <script src="paint.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="col-md-12 header menu">
+            <h1>JavaScript SketchPad Drawing</h1>
+        </div>
+
+
+
+        <div class="button-group col-md-12">
+            <button class="btn btn-primary" id="ellipse" title="ellipse">ellipse</button>
+
+            <button class="btn btn-primary" id="rect" title="Box">rectangle</button>
+
+            <button class="btn btn-primary" id="pen" title="Pen">Free Hand </button>
+
+            <button class="btn btn-primary" id="polygon" title="Polygon">Polygon</button>
+
+            <button class="btn btn-primary" id="line" title="line">Line</button>
+
+            <button class="btn btn-primary" id="circle" title="circle">Perfect circle</button>
+
+            <button class="btn btn-primary" id="square" title="square">Perfect square</button>
+        </div>
+
+        <div class="button-group col-md-12">
+
+            <button class="btn btn-info" id="eraser" title="Eraser">Delete</button>
+
+            <button class="btn btn-info" id="move" title="move">move</button>
+
+            <button class="btn btn-info" id="copy" title="copy">copy</button>
+
+            <button class="btn btn-info" id="paste" title="paste">paste</button>
+        </div>
+
+        <div class="button-group col-md-12">
+            <button class="btn btn-success" id="group" title="group">group</button> click items to add into the group
+
+            <button class="btn btn-warning" id="ungroup" title="ungroup">ungroup</button>click to pop out the lastest items from group
+        </div>
+
+        <div class="button-group col-md-12">
+            <button class="btn btn-danger" id="undo" title="undo">undo</button>
+
+            <button class="btn btn-danger" id="redo" title="redo">redo</button>
+
+
+
+        </div>
+
+        <div class="button-group col-md-12">
+            <button class="btn btn-danger" id="save" title="save">save</button> Save first and then click output to download
+
+            <a class="btn btn-danger" href="#" role="button" id="output" download='SVGWorkShop.svg'>output</a>
+        </div>
+
+        <div class="button-group col-md-12">
+
+            <h4><span class="badge badge-default">Load</span><input type="file" accept="image/svg+xml" id="file" class="btn btn-secondary" /></h4>
+
+        </div>
+
+        <div class="button-group col-md-12">
+            <button type="button" class="btn" id="black">Black</button>
+            <button type="button" class="btn btn-outline-primary" id="blue">Blue</button>
+            <button type="button" class="btn btn-outline-secondary" id="grey">Grey</button>
+            <button type="button" class="btn btn-outline-success" id="green">Green</button>
+            <button type="button" class="btn btn-outline-info" id="sky">Sky Blue</button>
+            <button type="button" class="btn btn-outline-warning" id="orange">Orange</button>
+            <button type="button" class="btn btn-outline-danger" id="red">Red</button>
+        </div>
+
+
+    </div>
+
+
+    <div class="outerLayout">
+        <div class="innerLayout">
+            <div id="center">
+                <svg class="paint" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					</svg>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
